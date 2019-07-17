@@ -1,0 +1,28 @@
+{
+  "name": "hello-world-babel-demo",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "repository": "git@github.com:m80126colin/hello-world-babel-demo.git",
+  "author": "Hsu Karinsu <m80126colin@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf dist/",
+    "build": "yarn run clean && npx babel lib/ --out-dir dist/",
+    "start": "yarn run build && node dist/index.js",
+    "test": "npx mocha --require @babel/register \"test/**/*.es6\"",
+    "dev": "npx babel-node lib/index.es6",
+    "prepublish": "yarn run build"
+  },
+  "devDependencies": {
+    "@babel/cli": "~7.4.0",
+    "@babel/core": "~7.4.0",
+    "@babel/node": "~7.4.0",
+    "@babel/preset-env": "~7.4.0",
+    "@babel/register": "~7.4.4",
+    "chai": "^4.2.0"
+  },
+  "dependencies": {
+    "core-js": "^3.1.4"
+  }
+}
